@@ -51,15 +51,31 @@ function ajaxCall(q) {
     }).done(function (response) {
         console.log(response);
 
+        var dataArray = response.data;
+        console.log(dataArray);
+        for (var i = 0; i < dataArray.length; i++) {
+            var dataUrl = dataArray[i].images.original_still.url;
+            //console.log(dataUrl);
+            var image = $("<img/>").attr("src", dataUrl);
+            $("#image-wrapper").append(image);
+        };
+
+
     }).fail(function (err) {
         throw err;
     });
 };
 
+
 /* function giphySearch() {
     var buttonValue = $(this).attr("id");
     ajaxCall(buttonValue);
 } */
+
+/* function appendImages() {
+    var dataArray = $(this).response.data;
+    console.log(dataArray);
+}; */
 
 $(document).ready(function () {
 
@@ -74,7 +90,6 @@ $(document).ready(function () {
         //giphySearch();
         var buttonValue = $(this).attr("id");
         ajaxCall(buttonValue);
-
     });
 
 });
