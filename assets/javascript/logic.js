@@ -27,9 +27,13 @@ function addButton() {
     var userButton = $("#input").val().trim();
     if (userButton != "") {
         topics.push(userButton);
-        $("#button-wrapper").empty();
-        console.log(topics);
-        createButtons()
+        var newButton = $("<button id='" + userButton + "'/>").text(userButton)
+            .attr("data-name", userButton)
+            .attr("class", "button");
+        $("#button-wrapper").append(newButton);
+        // $("#button-wrapper").empty();
+        // console.log(topics);
+        // createButtons()
     }
     else {
         //alert("hell0");
@@ -49,12 +53,11 @@ function ajaxCall(q) {
         url: url,
         method: 'GET',
     }).done(function (response) {
-        console.log(response);
-
+        //console.log(response);
         var dataArray = response.data;
-        console.log(dataArray);
+        //console.log(dataArray);
         for (var i = 0; i < dataArray.length; i++) {
-            var dataUrl = dataArray[i].images.original_still.url;
+            var dataUrl = dataArray[i].images.fixed_width_still.url;
             //console.log(dataUrl);
             var image = $("<img/>").attr("src", dataUrl);
             $("#image-wrapper").append(image);
@@ -86,8 +89,8 @@ $(document).ready(function () {
         addButton();
     });
 
-    $(".button").on("click", function (event) {
-        //giphySearch();
+    $("body").on("click", ".button", function (event) {
+        $("#image-wrapper").empty();
         var buttonValue = $(this).attr("id");
         ajaxCall(buttonValue);
     });
