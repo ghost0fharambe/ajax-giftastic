@@ -7,9 +7,9 @@ var topics = [
 ];
 //jquery variables
 var buttonContainer = $("#button-wrapper")
-//
 
 
+// function to create html buttons
 function createButtons() {
 
     for (var i = 0; i < topics.length; i++) {
@@ -22,6 +22,7 @@ function createButtons() {
     };
 };
 
+//function to append new buttons
 function addButton() {
     event.preventDefault();
     var userButton = $("#input").val().trim();
@@ -40,6 +41,7 @@ function addButton() {
     }
 }
 
+//function to retrieve images, takes parameter q, the search term to be added to the api url
 function ajaxCall(q) {
 
     var url = "http://api.giphy.com/v1/gifs/search";
@@ -55,12 +57,16 @@ function ajaxCall(q) {
     }).done(function (response) {
         //console.log(response);
         var dataArray = response.data;
-        //console.log(dataArray);
+        console.log(dataArray);
         for (var i = 0; i < dataArray.length; i++) {
             var dataUrl = dataArray[i].images.fixed_width_still.url;
             //console.log(dataUrl);
             var image = $("<img/>").attr("src", dataUrl)
                 .attr("class", "gif");
+            /* var figure = $("<figure/>").attr("class", "figure").html(image);
+                var caption = $("<figcaption/>").text(dataArray[i].rating);
+                var figCaption = figure.html(caption); 
+                $("#image-wrapper").append(figCaption) */
             $("#image-wrapper").append(image);
         };
 
@@ -70,6 +76,9 @@ function ajaxCall(q) {
     });
 };
 
+function clearImages() {
+    $("#image-wrapper").empty();
+}
 //function playImage() {
 //  var gifUrl = 
 //}
@@ -84,6 +93,7 @@ function ajaxCall(q) {
     console.log(dataArray);
 }; */
 
+//event handlers
 $(document).ready(function () {
 
     createButtons();
@@ -94,7 +104,7 @@ $(document).ready(function () {
     });
 
     $("body").on("click", ".button", function (event) {
-        $("#image-wrapper").empty();
+        clearImages();
         var buttonValue = $(this).attr("id");
         ajaxCall(buttonValue);
     });
@@ -110,6 +120,10 @@ $(document).ready(function () {
             $(this).addClass('playing');
             $(this).attr('src', src.replace(/\_s.gif/i, ".gif"))
         }
+    });
+
+    $("#clear").on("click", function () {
+        clearImages();
     });
 
 });
