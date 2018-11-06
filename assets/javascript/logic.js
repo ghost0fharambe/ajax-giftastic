@@ -59,14 +59,16 @@ function ajaxCall(q) {
         var dataArray = response.data;
         console.log(dataArray);
         for (var i = 0; i < dataArray.length; i++) {
+            //var dataUrl = dataArray[i].images.fixed_height_still.url;
             var dataUrl = dataArray[i].images.fixed_width_still.url;
             //console.log(dataUrl);
             var image = $("<img/>").attr("src", dataUrl)
                 .attr("class", "gif");
-            /* var figure = $("<figure/>").attr("class", "figure").html(image);
-                var caption = $("<figcaption/>").text(dataArray[i].rating);
-                var figCaption = figure.html(caption); 
-                $("#image-wrapper").append(figCaption) */
+            /* var figure = $("<figure/>").attr("class", "figure");
+            figure.html(image);
+            var caption = $("<figcaption/>").text(dataArray[i].rating);
+            var figCaption = figure.html(caption);
+            $("#image-wrapper").append(figCaption) */
             $("#image-wrapper").append(image);
         };
 

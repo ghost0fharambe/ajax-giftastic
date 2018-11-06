@@ -1,0 +1,75 @@
+@import url("reset.css");
+
+#image-wrapper {
+    /* width: 60%; */
+    margin: auto;
+}
+
+html {
+    text-align: center;
+}
+
+#ui-wrapper {
+    padding-top: 10px;
+    margin: 40px;
+    background-color: cadetblue;
+}
+
+.gif {
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: black 5px solid;
+}
+
+.gif:hover {
+    background-color: #38a;
+}
+
+button,#submit {
+    margin: 10px;
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: #279;
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #38a;
+}
+
+#header-wrapper {
+    font-family: 'Indie Flower', cursive;
+    margin: auto;
+    background-color: brown;
+    font-weight: bold;
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#header {
+    font-size: 60px;
+}
+
+#header2 {
+    font-size: 30px;
+}
+
+/* #content-wrapper {
+    max-height: 50%;
+} */
+/* #submit-wrapper {
+    margin: auto;
+    display: block;
+}
+
+#clear-wrapper {
+    display: block;
+    margin: auto;
+} */
