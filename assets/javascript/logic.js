@@ -59,7 +59,8 @@ function ajaxCall(q) {
         for (var i = 0; i < dataArray.length; i++) {
             var dataUrl = dataArray[i].images.fixed_width_still.url;
             //console.log(dataUrl);
-            var image = $("<img/>").attr("src", dataUrl);
+            var image = $("<img/>").attr("src", dataUrl)
+                .attr("class", "gif");
             $("#image-wrapper").append(image);
         };
 
@@ -69,6 +70,9 @@ function ajaxCall(q) {
     });
 };
 
+//function playImage() {
+//  var gifUrl = 
+//}
 
 /* function giphySearch() {
     var buttonValue = $(this).attr("id");
@@ -93,6 +97,19 @@ $(document).ready(function () {
         $("#image-wrapper").empty();
         var buttonValue = $(this).attr("id");
         ajaxCall(buttonValue);
+    });
+
+    $('body').on('click', '.gif', function () {
+        var src = $(this).attr("src");
+        if ($(this).hasClass('playing')) {
+            //stop
+            $(this).attr('src', src.replace(/\.gif/i, "_s.gif"))
+            $(this).removeClass('playing');
+        } else {
+            //play
+            $(this).addClass('playing');
+            $(this).attr('src', src.replace(/\_s.gif/i, ".gif"))
+        }
     });
 
 });
