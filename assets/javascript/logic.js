@@ -69,7 +69,7 @@ function ajaxCall(q) {
             var caption = $("<figcaption/>").text(dataArray[i].rating);
             var figCaption = figure.html(caption);
             $("#image-wrapper").append(figCaption) */
-            $("#image-wrapper").append(image);
+            $("#image-figure").append(image);
         };
 
 
@@ -79,7 +79,7 @@ function ajaxCall(q) {
 };
 
 function clearImages() {
-    $("#image-wrapper").empty();
+    $("#image-figure").empty();
 }
 //function playImage() {
 //  var gifUrl = 

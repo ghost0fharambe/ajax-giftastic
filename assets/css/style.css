@@ -10,6 +10,8 @@ html {
 }
 
 #ui-wrapper {
+    border-radius: 5px;
+    border: brown solid 2px;
     padding-top: 10px;
     margin: 40px;
     background-color: cadetblue;
@@ -27,12 +29,13 @@ html {
 }
 
 button,#submit {
+    border: black solid 1px;
     margin: 10px;
     font-family: sans-serif;
     font-size: 20px;
     background-color: #279;
     color: #fff;
-    border: 0px;
+    /* border: 0px; */
     border-radius: 3px;
     padding: 20px;
     cursor: pointer;
@@ -44,6 +47,8 @@ button:hover {
 }
 
 #header-wrapper {
+    border: black solid;
+    border-radius: 3px;
     font-family: 'Indie Flower', cursive;
     margin: auto;
     background-color: brown;
@@ -61,6 +66,9 @@ button:hover {
     font-size: 30px;
 }
 
+#header,#header2 {
+    color: #fff;
+}
 /* #content-wrapper {
     max-height: 50%;
 } */
