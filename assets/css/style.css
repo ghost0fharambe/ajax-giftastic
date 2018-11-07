@@ -5,6 +5,13 @@
     margin: auto;
 }
 
+#image-figure {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 html {
     text-align: center;
 }
@@ -25,6 +32,7 @@ html {
 }
 
 .gif:hover {
+    cursor: pointer;
     background-color: #38a;
 }
 
@@ -69,6 +77,13 @@ button:hover {
 #header,#header2 {
     color: #fff;
 }
+
+figcaption {
+    color: #fff;
+}
+
+/* .flex-container {
+} */
 /* #content-wrapper {
     max-height: 50%;
 } */

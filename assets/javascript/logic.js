@@ -64,12 +64,18 @@ function ajaxCall(q) {
             //console.log(dataUrl);
             var image = $("<img/>").attr("src", dataUrl)
                 .attr("class", "gif");
+
+            var figure = $("<figure/>").html(image);
+
             /* var figure = $("<figure/>").attr("class", "figure");
             figure.html(image);
             var caption = $("<figcaption/>").text(dataArray[i].rating);
             var figCaption = figure.html(caption);
             $("#image-wrapper").append(figCaption) */
-            $("#image-figure").append(image);
+
+            $("#image-figure").append(figure);
+            
+            image.after("<figcaption>" + dataArray[i].rating + "</figcaption>")
         };
 
 
@@ -81,19 +87,6 @@ function ajaxCall(q) {
 function clearImages() {
     $("#image-figure").empty();
 }
-//function playImage() {
-//  var gifUrl = 
-//}
-
-/* function giphySearch() {
-    var buttonValue = $(this).attr("id");
-    ajaxCall(buttonValue);
-} */
-
-/* function appendImages() {
-    var dataArray = $(this).response.data;
-    console.log(dataArray);
-}; */
 
 //event handlers
 $(document).ready(function () {
