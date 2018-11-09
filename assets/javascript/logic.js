@@ -75,7 +75,7 @@ function ajaxCall(q) {
 
             $("#image-figure").append(figure);
             
-            image.after("<figcaption>" + dataArray[i].rating + "</figcaption>")
+            image.after("<figcaption>Rated: " + dataArray[i].rating + "</figcaption>")
         };
 
 
