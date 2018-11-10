@@ -44,7 +44,7 @@ function addButton() {
 //function to retrieve images, takes parameter q, the search term to be added to the api url
 function ajaxCall(q) {
 
-    var url = "http://api.giphy.com/v1/gifs/search";
+    var url = "https://api.giphy.com/v1/gifs/search";
     url += '?' + $.param({
         "api_key": "XL5hHuJhx6Ks9bcTrXgZrW6WuGkShnMS",
         "q": q,
